@@ -160,16 +160,12 @@ public class FeedActivity extends ListActivity {
                 AdapterContextMenuInfo infoDelete = (AdapterContextMenuInfo) item.getMenuInfo();
                 myDatabaseHelper.deleteFeed(infoDelete.id);
                 refillData();
-                break;
             case EDIT_ID:
                 AdapterContextMenuInfo infoEdit = (AdapterContextMenuInfo) item.getMenuInfo();
                 Intent i = new Intent(this, FeedEdit.class);
                 i.putExtra(FeedsDatabaseHelper.KEY_ROWID, infoEdit.id);
                 startActivityForResult(i, ACTIVITY_EDIT);
-                break;
             default:
-
-                break;
         }
         return super.onContextItemSelected(item);
     }
